@@ -1,0 +1,64 @@
+//////eklendim atıldım
+client.on('guildDelete', guild => {
+
+  let avex = new Discord.MessageEmbed()
+  
+  .setColor("RED")
+  .setTitle(" Bot Atıldı ")
+  .addField("Sunucu Adı:", guild.name)
+  .addField("Sunucu sahibi", guild.owner)
+  .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+  .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+  .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+  
+     client.channels.cache.get('813463402604134471').send(avex);
+  
+  });
+  
+  
+  client.on('guildCreate', guild => {
+  
+  let avex = new Discord.MessageEmbed()
+  
+  .setColor("GREEN")
+  .setTitle(" Bot Eklendi ")
+  .addField("Sunucu Adı:", guild.name)
+  .addField("Sunucu sahibi", guild.owner)
+  .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+  .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+  .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+  
+     client.channels.cache.get('813463402604134471').send(avex);
+  
+  });
+  // EKLENDİM ATILDIM
+
+
+
+  339
+
+  //SNİPE
+client.on('messageDelete', message => {
+  const anan = require("narcos-db")
+  anan.set(`snipe.mesaj.${message.guild.id}`, message.content)
+  anan.set(`snipe.id.${message.guild.id}`, message.author.id)
+})
+ 
+//SNİPE BİTŞ
+
+
+
+///Prefix
+client.on("message", msg => {
+  //let prefix = (await db.fetch(`prefix_${message.guild.id}`)) || "/";
+  const westrabumbe = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setDescription(`Prefixim: ${ayarlar.prefix}\n Yardım için: ${ayarlar.prefix}yardım`);
+  if (
+    msg.content.includes(`<@${client.user.id}>`) ||
+    msg.content.includes(`<@!${client.user.id}>`)
+  ) {
+    msg.channel.send(westrabumbe);
+  }
+});
+  ///prefix son
